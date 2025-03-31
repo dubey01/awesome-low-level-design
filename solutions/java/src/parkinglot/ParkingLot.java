@@ -7,7 +7,9 @@ import java.util.List;
 
 public class ParkingLot {
     private static ParkingLot instance;
+    // For implementing singleton design pattern for ParkingLot object;
     private final List<Level> levels;
+    // For maintaining parking lot levels (finite number of level objects, as in the real world also, parking lot has finite space in the parking lot building)
 
     private ParkingLot() {
         levels = new ArrayList<>();
