@@ -8,7 +8,9 @@ import java.util.List;
 
 public class Level {
     private final int floor;
+    // To identify on which floor this level is present
     private final List<ParkingSpot> parkingSpots;
+    // To maintain finite number of parking spots (as in real world also, there are finite spaces for parking inside a building)
 
     public Level(int floor, int numSpots) {
         this.floor = floor;
