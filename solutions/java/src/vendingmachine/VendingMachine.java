@@ -2,14 +2,22 @@ package vendingmachine;
 
 public class VendingMachine {
     private static VendingMachine instance;
+    // VendingMachine object for implementing singleton design pattern
     Inventory inventory;
+    // Inventory class object to deal with inventory specific functions
     private final VendingMachineState idleState;
     private final VendingMachineState readyState;
     private final VendingMachineState dispenseState;
     private final VendingMachineState returnChangeState;
     private VendingMachineState currentState;
+    // State classes which basically represent the vending machine's state, these state objects are present inside the vending machine object
+    // so as to convey the information/ data about the vending machine's state and whatever state specific functions needs to be performed
+    // then they are achieved through the specific state objects.
+
     private Product selectedProduct;
+    // Represents current selected product in the vending machine
     private double totalPayment;
+    // Represents total amount that has been put inside the vending machine
 
     private VendingMachine() {
         inventory = new Inventory();
@@ -24,7 +32,7 @@ public class VendingMachine {
 
     public static synchronized VendingMachine getInstance() {
         if (instance == null) {
-            instance = new VendingMachine();
+            instance = new VendingMachine(); 
         }
         return instance;
     }
