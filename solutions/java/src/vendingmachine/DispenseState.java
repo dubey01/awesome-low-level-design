@@ -2,7 +2,8 @@ package vendingmachine;
 
 public class DispenseState implements VendingMachineState {
     private final VendingMachine vendingMachine;
-
+    // VendingMachine object to perform its related specific functions
+    
     public DispenseState(VendingMachine vendingMachine) {
         this.vendingMachine = vendingMachine;
     }
@@ -30,6 +31,8 @@ public class DispenseState implements VendingMachineState {
         vendingMachine.inventory.updateQuantity(product, vendingMachine.inventory.getQuantity(product) - 1);
         System.out.println("Product dispensed: " + product.getName());
         vendingMachine.setState(vendingMachine.getReturnChangeState()); // Change the state to ReturnChangeState
+        // as soon as the product is dispensed, the vending machine moves to returnChangeState and starts performing other function to calculate the change that 
+        // needs to be returned if any.
     }
 
     @Override
